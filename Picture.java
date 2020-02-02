@@ -6,15 +6,25 @@
  *
  * This class was written as an early example for teaching Java with BlueJ.
  * 
- * @author  Michael Kšlling and David J. Barnes
+ * @original author  Michael Kšlling and David J. Barnes
  * @version 2016.02.29
+ * 
+ * @current edits author Marc Weitze
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
-    private Circle sun;
+    private Square background;
+    private Triangle triangle1;
+    private Triangle triangle2;
+    private Circle circle1;
+    private Circle circle2;
+    private Square square1;
+    private Square square2;
+    private Square square3;
+    private Square square4;
+    private Square square5;
+    private Square square6;
+    private Person person1;
     private boolean drawn;
 
     /**
@@ -22,10 +32,18 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
-        sun = new Circle();
+        background = new Square(1000000, 0, 0, "white");
+        triangle1 = new Triangle(60, 70, 210, 140, "black");
+        triangle2 = new Triangle(50, 60, 210, 147, "white");
+        circle1 = new Circle(40, 190, 160, "black");
+        circle2 = new Circle(34, 193, 163, "white");
+        square1 = new Square(9, 206, 189, "black");
+        square2 = new Square(9, 206, 180, "black");
+        square3 = new Square(9, 206, 171, "black");
+        square4 = new Square(9, 206, 162, "black");
+        square5 = new Square(9, 206, 152, "black");
+        square6 = new Square(7, 206, 145, "black");
+        person1 = new Person(-50, 40, 210, 136, "black");
         drawn = false;
     }
 
@@ -35,28 +53,18 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.changeColor("blue");
-            wall.makeVisible();
-            
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
-    
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
-    
-            sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
-            sun.makeVisible();
+            background.makeVisible();
+            triangle1.makeVisible();
+            triangle2.makeVisible();
+            circle1.makeVisible();
+            circle2.makeVisible();
+            square1.makeVisible();
+            square2.makeVisible();
+            square3.makeVisible();
+            square4.makeVisible();
+            square5.makeVisible();
+            square6.makeVisible();
+            person1.makeVisible();
             drawn = true;
         }
     }
@@ -66,10 +74,18 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
-        sun.changeColor("black");
+        background.changeColor("black");
+        triangle1.changeColor("white");
+        triangle2.changeColor("black");
+        circle1.changeColor("white");
+        circle2.changeColor("black");
+        square1.changeColor("white");
+        square2.changeColor("white");
+        square3.changeColor("white");
+        square4.changeColor("white");
+        square5.changeColor("white");
+        square6.changeColor("white");
+        person1.changeColor("white");
     }
 
     /**
@@ -77,9 +93,16 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
-        sun.changeColor("yellow");
+        triangle1.changeColor("red");
+        triangle2.changeColor("blue");
+        circle1.changeColor("red");
+        circle2.changeColor("blue");
+        square1.changeColor("red");
+        square2.changeColor("red");
+        square3.changeColor("red");
+        square4.changeColor("red");
+        square5.changeColor("red");
+        square6.changeColor("red");
+        person1.changeColor("red");
     }
 }
